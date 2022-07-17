@@ -10,5 +10,5 @@ const galleryItemsMarkUp = galleryItems
       `<div class = "gallery__item"><img class = "gallery__image" src = "${preview}" alt = "${description}"></div>`
   )
   .join(``);
-console.log(galleryItemsMarkUp);
+
 gallery.innerHTML = galleryItemsMarkUp;
