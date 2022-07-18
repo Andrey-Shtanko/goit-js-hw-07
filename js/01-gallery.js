@@ -28,13 +28,13 @@ function selectPicture(event) {
 `)
 
   instance.show()
-  const modalOpen = document.querySelector(`.basicLightbox`)
+  
   gallery.addEventListener(`keydown`, closeModal)
   function closeModal(event) {
   if (event.code !== `Escape`) {
     return
   }
- modalOpen.remove()
+ instance.close()
 }
 }
 
