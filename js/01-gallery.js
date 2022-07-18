@@ -3,7 +3,7 @@ import { galleryItems } from "./gallery-items.js";
 
 // console.log(galleryItems);
 const gallery = document.querySelector(`.gallery`);
-
+const modalOpen = document.querySelector(`.basicLightbox--visible`)
 
 const galleryItemsMarkUp = galleryItems
   .map(
@@ -24,7 +24,19 @@ function selectPicture(event) {
   }
   const instance = basicLightbox.create(`
     <img src="${event.target.dataset.source}" width="800" height="600">
+    
 `)
 
-instance.show()
+  instance.show()
+  const modalOpen = document.querySelector(`.basicLightbox`)
+  gallery.addEventListener(`keydown`, closeModal)
+  function closeModal(event) {
+  if (event.code !== `Escape`) {
+    return
+  }
+ modalOpen.remove()
 }
+}
+
+
+
